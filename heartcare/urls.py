@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hospital.urls')),
     path('appointment/', include('appointment.urls')),
+    path('payment/', include('payment.urls'))
 ]
 
 if settings.DEBUG:

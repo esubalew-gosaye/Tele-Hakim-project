@@ -5,12 +5,16 @@ from hospital.models import Doctor
 from .models import Appointment
 
 
+
 class AppointmentView(View):
     def get(self, request, *args, **kwargs):
         context = {
             'doctors': Doctor.objects.all()
         }
         return render(request, "appointment/index.html", context)
+class payment(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "payment/index.html", context)
 
     def post(self, request, *args, **kwargs):
         name = request.POST.get('name')
@@ -28,3 +32,4 @@ class AppointmentView(View):
                 name=name, phone=phone, email=email, doctor=doctor, date=date, time=time, note=note)
             messages.success(request,'Appointment done successfully')
         return redirect('appointment')
+

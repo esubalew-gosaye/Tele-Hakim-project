@@ -40,7 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hospital',
     'appointment',
+    'payment',
+
 ]
+
+CHAPA_SECRET = "CHASECK_TEST-8Ocsb1gZVDbe3yIqyDVxVCKtVXTw6pDR"
+CHAPA_API_URL = 'https://api.chapa.dev'
+CHAPA_WEBHOOK_URL = 'https://6ba4-196-188-115-244.eu.ngrok.io/chapa-hook'
+CHAPA_API_VERSION = 'v1'
+CHAPA_TRANSACTION_MODEL = 'django_chapa.ChapaTransaction'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -102,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+'django.db.models.BigAutoField'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
